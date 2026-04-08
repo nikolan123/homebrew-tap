@@ -11,6 +11,12 @@ cask "widget-porting-toolkit" do
   
   app "Widget Porting Toolkit.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-rd", "com.apple.quarantine", "#{appdir}/Widget Porting Toolkit.app"],
+                   sudo: false
+  end
+
   zap trash: [
       "~/Library/Application Support/com.niko.WidgetPortingAPP",
       "~/Library/Preferences/com.niko.WidgetPortingAPP.plist",
