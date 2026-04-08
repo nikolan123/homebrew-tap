@@ -3,9 +3,10 @@ cask "widget-porting-toolkit" do
   sha256 :no_check
 
   url "https://github.com/nikolan123/WidgetPortingToolkit/releases/download/nightly/Widget.Porting.Toolkit.zip"
+    verified: "github.com/nikolan123/WidgetPortingToolkit/"
   name "Widget Porting Toolkit"
-  desc "Run OS X Dashboard Widgets on modern macOS natively."
-  homepage "https://wdgt.niko.rocks"
+  desc "Run legacy Dashboard Widgets natively"
+  homepage "https://wdgt.niko.rocks/"
 
   depends_on macos: ">= :monterey"
   
@@ -18,7 +19,7 @@ cask "widget-porting-toolkit" do
   end
 
   zap trash: [
-      "~/Library/Application Support/com.niko.WidgetPortingAPP",
-      "~/Library/Preferences/com.niko.WidgetPortingAPP.plist",
-    ]
+    "~/Library/Application Support/com.niko.WidgetPortingAPP",
+    "~/Library/Preferences/com.niko.WidgetPortingAPP.plist",
+  ]
 end
